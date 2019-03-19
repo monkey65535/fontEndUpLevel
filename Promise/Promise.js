@@ -1,12 +1,12 @@
 const Promise = require('./myPromise')
 const P = new Promise(function (reslove, reject) {
-    setTimeout(() => {
-        console.log('start Promise');
-        reslove('start')
-    }, 1200)
-})
-P.then(function (value) {
-    console.log(value)
-}, function (reason) {
-    console.log(reason);
+    reslove('first Reslove')
+});
+let Promise2 = P.then(data => {
+    console.log(data);  
+    return Promise2;
+}).then(res => {
+    console.log(data);
+}, err => {
+    console.log(err);
 })

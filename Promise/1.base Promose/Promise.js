@@ -1,7 +1,9 @@
 const Promise = require('./myPromise')
 const P = new Promise(function (reslove, reject) {
     console.log('start Promise');
-    reslove('start')
+    setTimeout(() => {
+        reslove('start')
+    }, 1000)
 })
 P.then(function (value) {
     console.log(value)
